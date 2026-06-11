@@ -14,19 +14,19 @@
     <table border="1" align="center" cellspacing="0" cellpadding="10px">
         <tr>
             <td>
-                <a href="index.html" = >Biodata</a>
+                <a href="index.php" = >Biodata</a>
             </td>
             <td>
-                <a href="hlm2.aaz.html" = >SMA</a>
+                <a href="hlm2.aaz.php" = >SMA</a>
             </td>
             <td>
-                <a href="hlm3.aaz.html" = >Kuliah</a>
+                <a href="hlm3.aaz.php" = >Kuliah</a>
             </td>
             <td>
-                <a href="mahasiswa.html" = >Data Mahasiswa</a>
+                <a href="mahasiswa.php" = >Data Mahasiswa</a>
             </td>
             <td>
-                <a href="tambahdata.html" = >Form Mahasiswa</a>
+                <a href="tambahdata.php" = >Form Mahasiswa</a>
             </td>
         </tr>
     </table>
