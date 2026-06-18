@@ -1,3 +1,34 @@
+<?php 
+
+    $koneksi = mysqli_connect("localhost", "root", "", "shsweeklyB-TI");
+
+    $query = "SELECT * FROM mahasiswa";
+
+    $result = mysqli_query($koneksi, $query);
+    /* /// ambil data (fetch) dari mahasiswa
+    /// mysqli_fetch_row --> array numeric
+    $mhs = mysqli_fetch_row ($result);
+
+    var_dump($mhs[1]);
+
+    /// mysqli_fetch_assoc -->asosiatif
+    $mhs = mysqli_fetch_assoc ($result);
+
+    var_dump($mhs["nama"]);
+
+    /// mysqli_fetch_array-->
+    $mhs = mysqli_fetch_array ($result);
+
+    var_dump($mhs[1]);
+
+    /// mysqli_fetch_object
+    $mhs = mysqli_fetch_object ($result);
+
+    var_dump($mhs->nama); */
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,19 +76,29 @@
             <th>Foto</th>
             <th>Aksi</th>
         </tr>
+        <?php
+            while ($mhs = mysqli_fetch_assoc($result))
+                {
+        ?>
         <tr>
             <td>1</td>
-            <td>Aisha Ayusti Zhafier</td>
-            <td>13242520043</td>
-            <td>Teknologi Informasi</td>
-            <td>aishayustiz@gmail.com</td>
-            <td>085882464673</td>
+            <td><?php echo $mhs["nama"] ?></td>
+            <td><?php echo $mhs["nim"] ?></td>
+            <td><?php echo $mhs["prodi"] ?></td>
+            <td><?php echo $mhs["email"] ?></td>
+            <td><?php echo $mhs["no_hp"] ?></td>
             <td><img src="aset/images/hirono2.png" width="50px"></td>
             <td>
                 <a href="editdata.php"><button>Edit</button></a>
                 <a href="deletedata.php"><button>Hapus</button></a>
             </td>
         </tr>
+        <?php
+                }
+        ?>
+
+
+
     </table>
     <br><br>
     <table border="1" cellpadding="5px">
