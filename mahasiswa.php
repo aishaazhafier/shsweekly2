@@ -81,13 +81,13 @@
                 {
         ?>
         <tr>
-            <td>1</td>
+            <td><?= $mhs["id"]?></td>
             <td><?php echo $mhs["nama"] ?></td>
             <td><?php echo $mhs["nim"] ?></td>
             <td><?php echo $mhs["prodi"] ?></td>
             <td><?php echo $mhs["email"] ?></td>
             <td><?php echo $mhs["no_hp"] ?></td>
-            <td><img src="aset/images/hirono2.png" width="50px"></td>
+            <td><img src="aset/images/shs.png" width="50px"></td>
             <td>
                 <a href="editdata.php"><button>Edit</button></a>
                 <a href="deletedata.php"><button>Hapus</button></a>
