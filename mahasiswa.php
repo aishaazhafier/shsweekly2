@@ -1,10 +1,11 @@
 <?php 
 
-    $koneksi = mysqli_connect("localhost", "root", "", "shsweeklyB-TI");
+    require 'fungsi.php';
 
     $query = "SELECT * FROM mahasiswa";
+    
+    $mahasiswas = tampildata($query);
 
-    $result = mysqli_query($koneksi, $query);
     /* /// ambil data (fetch) dari mahasiswa
     /// mysqli_fetch_row --> array numeric
     $mhs = mysqli_fetch_row ($result);
@@ -77,11 +78,12 @@
             <th>Aksi</th>
         </tr>
         <?php
-            while ($mhs = mysqli_fetch_assoc($result))
+            $no = 1;
+            foreach ($mahasiswas as $mhs)
                 {
         ?>
         <tr>
-            <td><?= $mhs["id"]?></td>
+            <td><?= $no ?></td>
             <td><?php echo $mhs["nama"] ?></td>
             <td><?php echo $mhs["nim"] ?></td>
             <td><?php echo $mhs["prodi"] ?></td>
@@ -90,11 +92,11 @@
             <td><img src="aset/images/shs.png" width="50px"></td>
             <td>
                 <a href="editdata.php"><button>Edit</button></a>
-                <a href="deletedata.php"><button>Hapus</button></a>
+                <a href="hapusdata.php?id=<?= $mhs ["id"] ?>" onclick="return confirm('yakin?')"><button>Hapus</button></a>
             </td>
         </tr>
         <?php
-                }
+            $no++;    }
         ?>
 
 

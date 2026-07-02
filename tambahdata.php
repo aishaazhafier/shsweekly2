@@ -1,3 +1,29 @@
+<?php
+    require 'fungsi.php';
+
+    if(isset($_POST["kirim"]))
+    {
+        if (tambahdata($_POST) > 0) 
+            {
+                echo "
+                <script>
+                alert('Data berhasil ditambahkan!');
+                document.location.href='mahasiswa.php';
+                </script>";
+            } 
+        else 
+            {
+                echo "
+                <script>
+                alert('Data gagal ditambahkan!');
+                </script>";
+            }
+    }
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,89 +58,38 @@
     </table>
     <br><br>
 
-    <form>
+    <form action="" method="post">
     <label for="nama">Nama:</label>
     <br>
     <input type="text" id="nama" name="nama">
     <br><br>
+
     <label for="nim">NIM:</label>
     <br>
     <input type="number" id="nim" name="nim">
     <br><br>
-    <label for="password">Password:</label>
+
+    <label for="prodi">Prodi:</label>
     <br>
-    <input type="password" id="password" name="password">
+    <input type="text" id="prodi" name="prodi">
     <br><br>
+
     <label for="email">Email:</label>
     <br>
     <input type="email" id="email" name="email">
     <br><br>
+
     <label for="nohp">No HP:</label>
     <br>
-    <input type="tel" id="nohp" name="nohp">
+    <input type="number" id="nohp" name="no_hp">
     <br><br>
-    <label for="website">Website Pribadi:</label>
-    <br>
-    <input type="url" id="website" name="website">
-    <br><br>
-    <label for="tanggal_lahir">Tanggal Lahir:</label>
-    <br>
-    <input type="date" id="tanggal_lahir" name="tanggal_lahir">
-    <br><br>
-    <label for="warna">Warna Favorit:</label>
-    <br>
-    <input type="color" id="warna" name="warna">
-    <br><br>
-    <label for="kepuasan">Tingkat Kepuasan:</label>
-    <br>
-    <input type="range" id="kepuasan" name="kepuasan" min="1" max="10">
-    <br>
-    <p>Jenis Kelamin:</p>
-    <input type="radio" id="pria" name="gender" value="Pria">
-    <label for="pria">Laki-laki</label>
-    <br>
-    <input type="radio" id="wanita" name="gender" value="Wanita">
-    <label for="wanita">Perempuan</label>
-    <br>
-    <p>Hobi:</p>
-    <input type="checkbox" id="hobi1" name="hobi1" value="Nyanyi">
-    <label for="hobi1">Bernyanyi</label>
-    <br>
-    <input type="checkbox" id="hobi2" name="hobi2" value="Film">
-    <label for="hobi2">Menonton Film</label>
-    <br>
-    <input type="checkbox" id="hobi3" name="hobi3" value="Olahraga">
-    <label for="hobi3">Berolahraga</label>
-    <br>
-    <input type="checkbox" id="hobi3" name="hobi3" value="Renang">
-    <label for="hobi3">Berenang</label>
-    <br>
-    <input type="checkbox" id="hobi3" name="hobi3" value="Baca">
-    <label for="hobi3">Membaca Buku</label>
-    <br><br>
+
     <label for="foto">Upload Foto:</label>
     <br>
-    <input type="file" id="foto" name="foto">
+    <input type="text" id="foto" name="foto">
     <br><br>
-    <label for="alamat">Alamat:</label>
-    <br>
-    <textarea id="alamat" name="alamat" rows="4" cols="50"></textarea>
-    <br><br>
-    <label for="jurusan">Jurusan:</label>
-    <br>
-    <select id="jurusan" name="jurusan">
-    <option value="Teknologi Informasi">Teknologi Informasi</option>
-    <option value="DKV">Desain Komunikasi Visual</option>
-    <option value="Rekayasa Sipil">Rekayasa Sipil</option>
-    <option value="Teknik Informatika">Teknik Informatika</option>
-    <option value="Arsitektur">Arsitektur</option>
-    <option value="Kesehatan Masyarakat">Kesehatan Masyarakat</option>
-    <option value="Teknik Mesin">Teknik Mesin</option>
-    <option value="Kedokteran">Kedokteran</option>
-    <option value="Dll">Dll..</option>
-    </select>
-    <br><br>
-    <input type="submit" value="Kirim Data">
+
+    <input type="submit" value="Kirim Data" name="kirim">
     </form>
 </body>
 </html>
