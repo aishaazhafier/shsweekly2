@@ -89,9 +89,9 @@
             <td><?php echo $mhs["prodi"] ?></td>
             <td><?php echo $mhs["email"] ?></td>
             <td><?php echo $mhs["no_hp"] ?></td>
-            <td><img src="aset/images/shs.png" width="50px"></td>
+            <td><img src="aset/images/<?=$mhs["foto"]?>" width="50px"></td>
             <td>
-                <a href="editdata.php"><button>Edit</button></a>
+                <a href="editdata.php?id=<?= $mhs["id"] ?>"><button>Edit</button></a>
                 <a href="hapusdata.php?id=<?= $mhs ["id"] ?>" onclick="return confirm('yakin?')"><button>Hapus</button></a>
             </td>
         </tr>

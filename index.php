@@ -31,7 +31,7 @@
         </table>
         <br><br>
         <div class="box">
-            <img src="aset/images/hirono2.png" width="250px">
+            <img src="aset/images/shs.png" width="250px">
             <p class="nama">Aisha Ayusti Zhafier</p>
             <p class="nim">NIM: 13242520043</p>
 </div>

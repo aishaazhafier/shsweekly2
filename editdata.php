@@ -1,15 +1,19 @@
 <?php
     require 'fungsi.php';
 
+    $id = $_GET["id"];
+
+    $query = "SELECT * FROM mahasiswa WHERE id=$id";
+
+    $mhs = tampildata ($query)[0];
+
     if(isset($_POST["kirim"]))
     {
-
-
-        if (tambahdata($_POST, $_FILES["foto"]) > 0) 
+        if (editdata($_POST, $id) > 0) 
             {
                 echo "
                 <script>
-                alert('Data berhasil ditambahkan!');
+                alert('Data berhasil di edit!');
                 document.location.href='mahasiswa.php';
                 </script>";
             } 
@@ -17,7 +21,7 @@
             {
                 echo "
                 <script>
-                alert('Data gagal ditambahkan!');
+                alert('Data gagal di edit!');
                 </script>";
             }
     }
@@ -31,7 +35,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
+    <title>edit mahasiswa</title>
     <link rel="stylesheet" href="aset/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
 </head>
@@ -60,35 +64,35 @@
     </table>
     <br><br>
 
-    <form action="" method="post" enctype="multipart/form-data">
+    <form action="" method="post">
     <label for="nama">Nama:</label>
     <br>
-    <input type="text" id="nama" name="nama">
+    <input type="text" id="nama" name="nama" value="<?= $mhs["nama"]?>">
     <br><br>
 
     <label for="nim">NIM:</label>
     <br>
-    <input type="number" id="nim" name="nim">
+    <input type="number" id="nim" name="nim" value="<?= $mhs["nim"]?>">
     <br><br>
 
     <label for="prodi">Prodi:</label>
     <br>
-    <input type="text" id="prodi" name="prodi">
+    <input type="text" id="prodi" name="prodi" value="<?= $mhs["prodi"]?>">
     <br><br>
 
     <label for="email">Email:</label>
     <br>
-    <input type="email" id="email" name="email">
+    <input type="email" id="email" name="email" value="<?= $mhs["email"]?>">
     <br><br>
 
     <label for="nohp">No HP:</label>
     <br>
-    <input type="number" id="nohp" name="no_hp">
+    <input type="number" id="nohp" name="no_hp" value="<?= $mhs["no_hp"]?>">
     <br><br>
 
     <label for="foto">Upload Foto:</label>
     <br>
-    <input type="file" id="foto" name="foto">
+    <input type="text" id="foto" name="foto" value="<?= $mhs["foto"]?>">
     <br><br>
 
     <input type="submit" value="Kirim Data" name="kirim">
